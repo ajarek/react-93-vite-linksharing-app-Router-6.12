@@ -1,0 +1,31 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #f0f1f1;
+  --lightGrey: #7b7b7b;
+  --grey: #2b343b;
+  --darkGrey: #192127;
+  --black: #000000;
+  --red: #ff0000;
+  --blue: #0062b2;
+  --orange: #ff9f1a;
+  --lightGreen: #1db954;
+  --green: #2b8c69;
+  --blueViolet:#8a2be2;
+  --lightBlueviolet:#dabdf7;
+
+}
+body {
+  font-family: 'Lato', sans-serif;
+}
+#root {
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: var(--white);
+  color: var(--black);
+}

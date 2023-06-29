@@ -1,0 +1,28 @@
+.links .phone-wrapper .phone{
+  width: 240px;
+  height: 480px;
+  padding: 10px;
+  box-shadow: 0 0 0 2px var(--darkGrey), 0 0 0 10px var(--lightGrey);
+  border-radius: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.links .phone-wrapper .phone::before{
+  content: '';
+  width: 100px;
+  height: 20px;
+  background-color: var(--lightGrey);
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-bottom: 2px solid var(--darkGrey);
+  border-left: 2px solid var(--darkGrey);
+  border-right: 2px solid var(--darkGrey);
+}
