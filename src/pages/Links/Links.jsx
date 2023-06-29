@@ -10,9 +10,9 @@ const Links = () => {
     <div className='links'>
       <div className="phone-wrapper">
        <Phone>
-        <ModalLink name={'GitHub'} backgroundColor={'#192127'} icon={<BsGithub/>}/>
-        <ModalLink name={'YouTube'} backgroundColor={'#ff0000'} icon={<BsYoutube/>}/>
-        <ModalLink name={'LinkedIn'} backgroundColor={'#0062b2'} icon={<BsLinkedin/>}/>
+        <ModalLink name={'GitHub'} backgroundColor={'#192127'} icon={<BsGithub/>} href={'https://github.com/'} />
+        <ModalLink name={'YouTube'} backgroundColor={'#ff0000'} icon={<BsYoutube/>}href={'https://youtube.com/'} />
+        <ModalLink name={'LinkedIn'} backgroundColor={'#0062b2'} icon={<BsLinkedin/>}href={'https://linkedin.com/'} />
        
         
        </Phone>

@@ -20,8 +20,8 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 5;
-  border-bottom-right-radius: 7px;
-  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
   border-bottom: 2px solid var(--darkGrey);
   border-left: 2px solid var(--darkGrey);
   border-right: 2px solid var(--darkGrey);

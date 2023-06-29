@@ -1,18 +1,20 @@
 import { BsArrowRightShort } from 'react-icons/bs'
 import './ModalLink.css'
 
-const ModalLink = ({ icon, name, backgroundColor }) => {
+const ModalLink = ({ icon, name, backgroundColor,href }) => {
   return (
-    <div
+    <a
       className='modal-link'
       style={{ backgroundColor: backgroundColor }}
+      href={href}
+      target={'_blank'}
     >
       <div className='modal-link-wrapper'>
         {icon}
         {name}
       </div>
       <BsArrowRightShort />
-    </div>
+    </a>
   )
 }
 
