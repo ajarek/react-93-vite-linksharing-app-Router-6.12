@@ -6,10 +6,8 @@ import './Form.css'
 import { useEffect } from 'react'
 export const Form = ({ onSubmit }) => {
   const schema = yup.object().shape({
-    name: yup.string().required(),
-    email: yup.string().email().required(),
-    password: yup.string().required(),
-    phone: yup.string().required(),
+    platform: yup.string().required(),
+    link: yup.string().required(),
   })
 
   const {
@@ -25,10 +23,8 @@ export const Form = ({ onSubmit }) => {
   useEffect(() => {
     if (formState.isSubmitSuccessful) {
       reset({
-        name: '',
-        email: '',
-        password: '',
-        phone: '',
+        platform: '',
+        link: '',
       })
     }
   }, [formState, reset])
@@ -39,46 +35,37 @@ export const Form = ({ onSubmit }) => {
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className='wrapper-input'>
-        <label htmlFor='name'>Imię i Nazwisko</label>
-        <input
-          type='text'
-          placeholder='Jan Kowalski'
-          {...register('name')}
-        />
-        <p>{errors?.name?.message}</p>
+      <label htmlFor='email'>Platform</label>
+        <select
+          {...register('platform')}
+          className='select'
+        >
+          <option value='GitHub'>GitHub</option>
+          <option value='YouTube'>YouTube</option>
+          <option value='LinkedIn'>LinkedIn</option>
+          <option value='Facebook'>Facebook</option>
+          <option value='Twitter'>Twitter</option>
+          <option value='Instagram'>Instagram</option>
+        </select>
+        <p>{errors?.platform?.message}</p>
       </div>
 
       <div className='wrapper-input'>
-        <label htmlFor='email'>Email Adres</label>
+        <label htmlFor='email'>Link</label>
         <input
-          type='email'
-          placeholder='kowalski@gmail.com'
-          {...register('email')}
+          type='text'
+          placeholder='https://github.com/'
+          {...register('link')}
         />
-        <p>{errors.email?.message}</p>
+        <p>{errors.link?.message}</p>
       </div>
-      <div className='wrapper-input'>
-        <label htmlFor='phone'>Hasło</label>
-        <input
-          type='password'
-          {...register('password')}
-        />
-        <p>{errors.password?.message}</p>
-      </div>
-      <div className='wrapper-input'>
-        <label htmlFor='phone'>Numer Telefonu</label>
-        <input
-          type='phone'
-          placeholder='654 555 136'
-          {...register('phone')}
-        />
-        <p>{errors.phone?.message}</p>
-      </div>
+      
 
       <div className='wrapper-input'>
         <input
           type='submit'
-          value='Zarejestruj'
+          value='+ Add new link'
+          
         />
       </div>
     </form>

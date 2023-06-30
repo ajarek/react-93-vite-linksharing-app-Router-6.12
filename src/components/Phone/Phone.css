@@ -1,4 +1,4 @@
-.links .phone-wrapper .phone{
+ .phone{
   width: 240px;
   height: 480px;
   padding: 10px;
@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: flex-start;
 }
-.links .phone-wrapper .phone::before{
+ .phone::before{
   content: '';
   width: 100px;
   height: 20px;

@@ -12,5 +12,10 @@
 }
 
 .links .customize-links{
-  background-color: bisque;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.wrapper-link{
+  padding:8px ;
 }
