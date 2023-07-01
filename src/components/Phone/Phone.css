@@ -26,3 +26,20 @@
   border-left: 2px solid var(--darkGrey);
   border-right: 2px solid var(--darkGrey);
 }
+.phone .foto-user{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--superLightGrey);
+  margin-top:20px ;
+}
+.phone .name-user,
+.phone .email-user{
+  width: 150px;
+  height: 20px;
+  background-color: var(--superLightGrey);
+  margin-top: 10px;
+}
+.phone .email-user{
+  height: 15px;
+}

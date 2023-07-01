@@ -1,5 +1,6 @@
 import { Form } from '../../helper/Form/Form'
-import { saveStorage, fetchStorage } from '../../helper/localStorage'
+import { FormDelete } from '../../helper/FormDelete/FormDelete'
+import { saveStorage, fetchStorage, saveStorageSingle } from '../../helper/localStorage'
 import SocialMediaIcon from '../../helper/SocialMediaIcon'
 import Phone from '../../components/Phone/Phone'
 import ModalLink from '../../components/ModalLink/ModalLink'
@@ -47,6 +48,12 @@ const Links = () => {
     saveStorage(newLink, 'myData')
   }
 
+  const deleteLink=(dt)=>{
+    setCounter(counter + 1)
+   const dataFilter=data.filter(fl=>fl.platform!==dt.platform)
+   saveStorageSingle(dataFilter, 'myData');
+  }
+
   return (
     <div className='links'>
       <div className='phone-wrapper'>
@@ -75,6 +82,11 @@ const Links = () => {
 
         <div className='wrapper-link'>
           <Form onSubmit={addLink} />
+           
+        </div>
+        <div className='wrapper-link'>
+          <FormDelete onSubmit={deleteLink}/> 
+           
         </div>
       </div>
     </div>
