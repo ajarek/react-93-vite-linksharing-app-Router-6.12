@@ -9,6 +9,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+ 
 }
  .phone::before{
   content: '';
@@ -31,15 +32,27 @@
   height: 80px;
   border-radius: 50%;
   background-color: var(--superLightGrey);
-  margin-top:20px ;
+  margin-top:15px ;
+  overflow: hidden;
+  border: 1px solid var(--grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.phone .foto-user img{
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
 }
 .phone .name-user,
 .phone .email-user{
   width: 150px;
   height: 20px;
   background-color: var(--superLightGrey);
-  margin-top: 10px;
+  margin-top: 5px;
+  text-align: center;
 }
 .phone .email-user{
   height: 15px;
+  margin-bottom: 10px;
 }

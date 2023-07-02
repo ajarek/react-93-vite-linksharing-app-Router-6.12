@@ -5,7 +5,7 @@ const Phone = ({children,src, email,nameUser, background}) => {
     <div className="phone">
       <div className="foto-user" style={{backgroundColor:background}}>
         
-        <img src={src}  />
+        {src?<img src={src}  />:null}
       </div>
       <div className="name-user" style={{backgroundColor:background}}>
         {nameUser}

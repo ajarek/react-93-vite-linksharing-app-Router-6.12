@@ -59,7 +59,13 @@ const Links = () => {
       <div className='phone-wrapper'>
         <Phone>
           {data &&
-            data.map((link, index) => {
+            data
+            .filter((value, index, self) => {
+              return index === self.findIndex(obj => (
+                obj.platform === value.platform 
+              ));
+            })
+            .map((link, index) => {
               const socialMediaName = `${link.platform}`
 
               return (

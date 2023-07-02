@@ -26,13 +26,13 @@ function FileUpload({onSubmit}) {
  
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form className='file-upload' onSubmit={handleSubmit(onSubmit)}>
      <Controller
         name="file"
         control={control}
         defaultValue={null}
         render={({ field }) => (
-          <div>
+          <div className='wrapper-input'>
             <input
               type="file"
               onChange={(e) => field.onChange(e.target.files[0])}
@@ -68,7 +68,7 @@ function FileUpload({onSubmit}) {
         />
        {errors.email && <p>{errors.email.message}</p>}
       </div>
-      <button type="submit">Prześlij</button>
+      <button type="submit">Save</button>
     </form>
   );
 }

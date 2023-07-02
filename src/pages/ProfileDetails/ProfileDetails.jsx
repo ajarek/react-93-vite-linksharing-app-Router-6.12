@@ -4,6 +4,7 @@ import {
   saveStorage,
   fetchStorage,
   saveStorageSingle,
+  deleteStorage
 } from '../../helper/localStorage'
 import ModalLink from '../../components/ModalLink/ModalLink'
 import SocialMediaIcon from '../../helper/SocialMediaIcon'
@@ -15,48 +16,75 @@ const ProfileDetails = () => {
   const [data, setData] = useState([])
   const [counter, setCounter] = useState(0)
   const [preview, setPreview] = useState(null)
-  const [first, setFirst] = useState()
-  const [last, setLast] = useState()
-  const [email, setEmail] = useState()
+  const [newUser, setNewUser] = useState(null)
+  const [first, setFirst] = useState('')
+  const [last, setLast] = useState('')
+  const [email, setEmail] = useState('')
 
   useEffect(() => {
     const myData = fetchStorage('myData')
     setData(myData)
   }, [counter])
+  useEffect(() => {
+    
+    const myUser = fetchStorage('user')
+   if (myUser)
+    {setNewUser(myUser)}
+  },[counter])
+  
 
   const onSubmit = (data) => {
+
     
-      setFirst( data.first);
-    
-  
-      setLast(data.last);
-   
- 
-  
-      setEmail(data.email);
-   
- 
-    
-    const file = data.file 
+    setFirst(data.first)
+
+    setLast(data.last)
+
+    setEmail(data.email)
+
+    const file = data.file
     if (file) {
       const reader = new FileReader()
       reader.onloadend = () => {
         setPreview(reader.result)
+       
       }
       reader.readAsDataURL(file)
     } else {
       setPreview(null)
     }
   }
-  
+  useEffect(() => {
+    const user={
+      img:preview,
+      first:first,
+      last:last,
+      email:email
+    }
+    if(preview)
+   { saveStorageSingle(user, 'user')}
+   setCounter(counter+1)
+  },[preview])
+ 
   return (
     <div className='links'>
       <div className='phone-wrapper'>
-        <Phone>
+        <Phone
+          src={newUser?newUser.img:null}
+          nameUser={newUser?newUser.first + ' ' + newUser.last:null}
+          email={newUser?newUser.email:null}
+          background={'transparent'}
+        >
           {data &&
-            data.map((link, index) => {
+            data
+            .filter((value, index, self) => {
+              return index === self.findIndex(obj => (
+                obj.platform === value.platform 
+              ));
+            })
+            .map((link, index) => {
               const socialMediaName = `${link.platform}`
-
+              
               return (
                 <ModalLink
                   key={index}
@@ -77,15 +105,9 @@ const ProfileDetails = () => {
         <div className='wrapper-link'>
           <FileUpload onSubmit={onSubmit} />
         </div>
-        {preview && (
-        <div>
-          <h3>Podgląd pliku:</h3>
-          <img src={preview} alt="Podgląd pliku" />
-          <p>{first}</p>
-          <p>{last}</p>
-          <p>{email}</p>
+        <div className='wrapper-link'>
+          <button className='delete' onClick={()=>{deleteStorage('user');setNewUser()}}>Delete Profil</button>
         </div>
-      )}
       </div>
     </div>
   )
