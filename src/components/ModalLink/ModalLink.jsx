@@ -1,7 +1,7 @@
 import { BsArrowRightShort } from 'react-icons/bs'
 import './ModalLink.css'
 
-const ModalLink = ({ icon, name, backgroundColor,href }) => {
+const ModalLink = ({ icon, name, backgroundColor, href }) => {
   return (
     <a
       className='modal-link'

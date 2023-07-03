@@ -5,28 +5,27 @@
   display: grid;
   grid-template-columns: 2fr 3fr;
 }
-.links .phone-wrapper{
+.links .phone-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.links .customize-links{
+.links .customize-links {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
-.wrapper-link{
-  padding:8px ;
+.wrapper-link {
+  padding: 8px;
 }
-@media (max-width:850px) {
-  .links .phone-wrapper{
+@media (max-width: 850px) {
+  .links .phone-wrapper {
     display: none;
   }
   .links {
-    
     padding: 80px 20px 20px 20px;
-   
-    grid-template-columns: 1fr ;
+
+    grid-template-columns: 1fr;
   }
 }

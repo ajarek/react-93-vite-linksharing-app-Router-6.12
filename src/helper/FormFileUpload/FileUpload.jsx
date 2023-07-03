@@ -1,8 +1,8 @@
 import './FileUpload.css'
-import { useForm, Controller } from 'react-hook-form';
-import { useEffect } from 'react';
+import { useForm, Controller } from 'react-hook-form'
+import { useEffect } from 'react'
 import { yupResolver } from '@hookform/resolvers/yup'
-import * as yup from 'yup';
+import * as yup from 'yup'
 
 const schema = yup.object().shape({
   files: yup.array().of(
@@ -10,42 +10,51 @@ const schema = yup.object().shape({
       .mixed()
       .required('Choose a file')
       .test('fileSize', 'The file is too large', (value) => {
-        if (!value) return false;
-        return value.size <= 1048576; // Maximum file size in bytes (1MB)
+        if (!value) return false
+        return value.size <= 1048576 // Maximum file size in bytes (1MB)
       })
   ),
   email: yup.string().required(),
   first: yup.string().required(),
   last: yup.string().required(),
-});
+})
 
-function FileUpload({onSubmit}) {
-  const {register, handleSubmit, reset,
-    formState, control, formState: { errors } } = useForm({
+function FileUpload({ onSubmit }) {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState,
+    control,
+    formState: { errors },
+  } = useForm({
     resolver: yupResolver(schema),
-  });
+  })
 
   useEffect(() => {
     if (formState.isSubmitSuccessful) {
       reset({
-        files:[] ,
+        files: [],
         first: '',
         last: '',
-        email: ''
+        email: '',
       })
     }
   }, [formState, reset])
 
   return (
-    <form className='file-upload' onSubmit={handleSubmit(onSubmit)}>
-     <Controller
-        name="file"
+    <form
+      className='file-upload'
+      onSubmit={handleSubmit(onSubmit)}
+    >
+      <Controller
+        name='file'
         control={control}
         defaultValue={null}
         render={({ field }) => (
           <div className='wrapper-input'>
             <input
-              type="file"
+              type='file'
               onChange={(e) => field.onChange(e.target.files[0])}
             />
             {errors.file && <p>{errors.file.message}</p>}
@@ -59,7 +68,7 @@ function FileUpload({onSubmit}) {
           placeholder='Ben'
           {...register('first')}
         />
-       {errors.first && <p>{errors.first.message}</p>}
+        {errors.first && <p>{errors.first.message}</p>}
       </div>
       <div className='wrapper-input'>
         <label htmlFor='last'>Last name</label>
@@ -68,7 +77,7 @@ function FileUpload({onSubmit}) {
           placeholder='Wright'
           {...register('last')}
         />
-       {errors.last && <p>{errors.last.message}</p>}
+        {errors.last && <p>{errors.last.message}</p>}
       </div>
       <div className='wrapper-input'>
         <label htmlFor='email'>Email</label>
@@ -77,11 +86,11 @@ function FileUpload({onSubmit}) {
           placeholder='user@example.com'
           {...register('email')}
         />
-       {errors.email && <p>{errors.email.message}</p>}
+        {errors.email && <p>{errors.email.message}</p>}
       </div>
-      <button type="submit">Save</button>
+      <button type='submit'>Save</button>
     </form>
-  );
+  )
 }
 
-export default FileUpload;
+export default FileUpload

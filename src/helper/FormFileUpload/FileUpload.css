@@ -23,26 +23,24 @@
   border-radius: 5px;
   user-select: none;
   color: var(--darkGrey);
-  
 }
-.file-upload input[type=file] {
-  
+.file-upload input[type='file'] {
   max-width: 100%;
   color: var(--lightGrey);
   padding: 3px;
   background-color: #fff;
 }
-.file-upload input[type=file]::file-selector-button {
+.file-upload input[type='file']::file-selector-button {
   margin-right: 20px;
   border: none;
   background: var(--lightBlueviolet);
   padding: 5px 20px;
   border-radius: 10px;
   color: var(--darkGrey);
-  cursor:pointer;
-  transition: all .2s ease-in-out;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
-.file-upload input[type=file]::file-selector-button:hover {
+.file-upload input[type='file']::file-selector-button:hover {
   background: var(--blueViolet);
   color: var(--white);
 }

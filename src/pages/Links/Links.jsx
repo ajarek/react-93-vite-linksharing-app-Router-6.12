@@ -1,6 +1,10 @@
 import { Form } from '../../helper/Form/Form'
 import { FormDelete } from '../../helper/FormDelete/FormDelete'
-import { saveStorage, fetchStorage, saveStorageSingle } from '../../helper/localStorage'
+import {
+  saveStorage,
+  fetchStorage,
+  saveStorageSingle,
+} from '../../helper/localStorage'
 import SocialMediaIcon from '../../helper/SocialMediaIcon'
 import Phone from '../../components/Phone/Phone'
 import ModalLink from '../../components/ModalLink/ModalLink'
@@ -48,10 +52,10 @@ const Links = () => {
     saveStorage(newLink, 'myData')
   }
 
-  const deleteLink=(dt)=>{
+  const deleteLink = (dt) => {
     setCounter(counter + 1)
-   const dataFilter=data.filter(fl=>fl.platform!==dt.platform)
-   saveStorageSingle(dataFilter, 'myData');
+    const dataFilter = data.filter((fl) => fl.platform !== dt.platform)
+    saveStorageSingle(dataFilter, 'myData')
   }
 
   return (
@@ -60,24 +64,25 @@ const Links = () => {
         <Phone>
           {data &&
             data
-            .filter((value, index, self) => {
-              return index === self.findIndex(obj => (
-                obj.platform === value.platform 
-              ));
-            })
-            .map((link, index) => {
-              const socialMediaName = `${link.platform}`
+              .filter((value, index, self) => {
+                return (
+                  index ===
+                  self.findIndex((obj) => obj.platform === value.platform)
+                )
+              })
+              .map((link, index) => {
+                const socialMediaName = `${link.platform}`
 
-              return (
-                <ModalLink
-                  key={index}
-                  name={link.platform}
-                  backgroundColor={link.bg}
-                  icon={<SocialMediaIcon name={socialMediaName} />}
-                  href={link.link}
-                />
-              )
-            })}
+                return (
+                  <ModalLink
+                    key={index}
+                    name={link.platform}
+                    backgroundColor={link.bg}
+                    icon={<SocialMediaIcon name={socialMediaName} />}
+                    href={link.link}
+                  />
+                )
+              })}
         </Phone>
       </div>
       <div className='customize-links'>
@@ -88,11 +93,9 @@ const Links = () => {
 
         <div className='wrapper-link'>
           <Form onSubmit={addLink} />
-           
         </div>
         <div className='wrapper-link'>
-          <FormDelete onSubmit={deleteLink}/> 
-           
+          <FormDelete onSubmit={deleteLink} />
         </div>
       </div>
     </div>

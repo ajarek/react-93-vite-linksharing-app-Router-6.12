@@ -29,9 +29,8 @@ const router = createBrowserRouter([
         element: <Preview />,
         errorElement: <Error />,
       },
-    ]
-    }
-      
+    ],
+  },
 ])
 function App() {
   const [data, setData] = useState([])
@@ -40,7 +39,7 @@ function App() {
   return (
     <div className='App'>
       <AppContext.Provider
-        value={{data, setData, newUser, setNewUser, counter, setCounter}}
+        value={{ data, setData, newUser, setNewUser, counter, setCounter }}
       >
         <RouterProvider router={router} />
       </AppContext.Provider>

@@ -1,4 +1,4 @@
- .phone{
+.phone {
   width: 240px;
   height: 480px;
   padding: 10px;
@@ -9,9 +9,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
- 
 }
- .phone::before{
+.phone::before {
   content: '';
   width: 100px;
   height: 20px;
@@ -27,32 +26,32 @@
   border-left: 2px solid var(--darkGrey);
   border-right: 2px solid var(--darkGrey);
 }
-.phone .foto-user{
+.phone .foto-user {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   background-color: var(--superLightGrey);
-  margin-top:15px ;
+  margin-top: 15px;
   overflow: hidden;
   border: 1px solid var(--grey);
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.phone .foto-user img{
- width: 100%;
- height: 100%;
- object-fit: cover;
+.phone .foto-user img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .phone .name-user,
-.phone .email-user{
+.phone .email-user {
   width: 150px;
   height: 20px;
   background-color: var(--superLightGrey);
   margin-top: 5px;
   text-align: center;
 }
-.phone .email-user{
+.phone .email-user {
   height: 15px;
   margin-bottom: 10px;
 }

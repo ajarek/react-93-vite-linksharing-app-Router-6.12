@@ -1,25 +1,26 @@
-import { FaFacebook, FaTwitter, FaInstagram, FaYoutube, FaGithub, FaLinkedin } from 'react-icons/fa'
+import {
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
+  FaYoutube,
+  FaGithub,
+  FaLinkedin,
+} from 'react-icons/fa'
 
 const SocialMediaIcon = ({ name }) => {
   if (name === 'Facebook') {
     return <FaFacebook />
-  }
-   else if (name === 'Twitter') {
+  } else if (name === 'Twitter') {
     return <FaTwitter />
-  } 
-  else if (name === 'Instagram') {
+  } else if (name === 'Instagram') {
     return <FaInstagram />
-  }
-  else if (name === 'YouTube') {
+  } else if (name === 'YouTube') {
     return <FaYoutube />
-  }
-  else if (name === 'GitHub') {
+  } else if (name === 'GitHub') {
     return <FaGithub />
-  }
-  else if (name === 'LinkedIn') {
+  } else if (name === 'LinkedIn') {
     return <FaLinkedin />
-  }
-   else {
+  } else {
     return null // Obsługa przypadku, gdy nazwa nie pasuje do żadnej ikony
   }
 }

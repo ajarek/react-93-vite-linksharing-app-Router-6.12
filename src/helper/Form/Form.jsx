@@ -35,7 +35,7 @@ export const Form = ({ onSubmit }) => {
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className='wrapper-input'>
-      <label htmlFor='email'>Platform</label>
+        <label htmlFor='email'>Platform</label>
         <select
           {...register('platform')}
           className='select'
@@ -59,13 +59,11 @@ export const Form = ({ onSubmit }) => {
         />
         <p>{errors.link?.message}</p>
       </div>
-      
 
       <div className='wrapper-input'>
         <input
           type='submit'
           value='+ Add new link'
-          
         />
       </div>
     </form>

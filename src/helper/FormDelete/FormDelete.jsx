@@ -7,7 +7,6 @@ import { useEffect } from 'react'
 export const FormDelete = ({ onSubmit }) => {
   const schema = yup.object().shape({
     platform: yup.string().required(),
-   
   })
 
   const {
@@ -24,7 +23,6 @@ export const FormDelete = ({ onSubmit }) => {
     if (formState.isSubmitSuccessful) {
       reset({
         // platform: '',
-       
       })
     }
   }, [formState, reset])
@@ -35,7 +33,7 @@ export const FormDelete = ({ onSubmit }) => {
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className='wrapper-input'>
-      <label htmlFor='email'>Platform</label>
+        <label htmlFor='email'>Platform</label>
         <select
           {...register('platform')}
           className='select'
@@ -50,14 +48,10 @@ export const FormDelete = ({ onSubmit }) => {
         <p>{errors?.platform?.message}</p>
       </div>
 
-      
-      
-
       <div className='wrapper-input'>
         <input
           type='submit'
           value='Delete link'
-          
         />
       </div>
     </form>

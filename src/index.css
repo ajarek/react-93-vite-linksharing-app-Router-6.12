@@ -7,7 +7,7 @@
 
 :root {
   --white: #eef0f0;
-  --superLightGrey:#ddd;
+  --superLightGrey: #ddd;
   --lightGrey: #7b7b7b;
   --grey: #2b343b;
   --darkGrey: #192127;
@@ -18,9 +18,8 @@
   --orange: #ff9f1a;
   --lightGreen: #1db954;
   --green: #2b8c69;
-  --blueViolet:#8a2be2;
-  --lightBlueviolet:#dabdf7;
-
+  --blueViolet: #8a2be2;
+  --lightBlueviolet: #dabdf7;
 }
 body {
   font-family: 'Lato', sans-serif;
