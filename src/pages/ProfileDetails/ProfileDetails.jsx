@@ -1,5 +1,7 @@
 import Phone from '../../components/Phone/Phone'
-import { useState, useEffect } from 'react'
+import { React, useState, useContext, useEffect } from 'react'
+import { AppContext } from '../../App'
+import { useNavigate } from 'react-router-dom'
 import {
   saveStorage,
   fetchStorage,
@@ -13,13 +15,15 @@ import './ProfileDetails.css'
 import { date } from 'yup'
 
 const ProfileDetails = () => {
-  const [data, setData] = useState([])
+  
   const [counter, setCounter] = useState(0)
   const [preview, setPreview] = useState(null)
-  const [newUser, setNewUser] = useState(null)
+  
   const [first, setFirst] = useState('')
   const [last, setLast] = useState('')
   const [email, setEmail] = useState('')
+  const navigate = useNavigate();
+  const { data, setData, newUser, setNewUser } = useContext(AppContext)
 
   useEffect(() => {
     const myData = fetchStorage('myData')
@@ -53,6 +57,7 @@ const ProfileDetails = () => {
     } else {
       setPreview(null)
     }
+   
   }
   useEffect(() => {
     const user={

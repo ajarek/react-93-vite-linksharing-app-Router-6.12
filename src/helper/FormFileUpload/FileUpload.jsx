@@ -1,5 +1,6 @@
 import './FileUpload.css'
 import { useForm, Controller } from 'react-hook-form';
+import { useEffect } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup';
 
@@ -19,11 +20,21 @@ const schema = yup.object().shape({
 });
 
 function FileUpload({onSubmit}) {
-  const {register, handleSubmit, control, formState: { errors } } = useForm({
+  const {register, handleSubmit, reset,
+    formState, control, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
   });
 
- 
+  useEffect(() => {
+    if (formState.isSubmitSuccessful) {
+      reset({
+        files:[] ,
+        first: '',
+        last: '',
+        email: ''
+      })
+    }
+  }, [formState, reset])
 
   return (
     <form className='file-upload' onSubmit={handleSubmit(onSubmit)}>

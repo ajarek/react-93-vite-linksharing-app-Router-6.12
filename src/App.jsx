@@ -34,12 +34,13 @@ const router = createBrowserRouter([
       
 ])
 function App() {
-  
+  const [data, setData] = useState([])
+  const [newUser, setNewUser] = useState(null)
 
   return (
     <div className='App'>
       <AppContext.Provider
-        value={{}}
+        value={{data, setData, newUser, setNewUser}}
       >
         <RouterProvider router={router} />
       </AppContext.Provider>

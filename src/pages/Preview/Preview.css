@@ -1,5 +1,12 @@
 .preview{
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
-  padding: 90px;
+  
+ 
+
+}
+.preview .links{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
