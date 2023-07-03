@@ -1,12 +1,29 @@
 import Phone from '../../components/Phone/Phone'
 import { React, useState, useContext, useEffect } from 'react'
 import { AppContext } from '../../App'
+import {
+  saveStorage,
+  fetchStorage,
+  saveStorageSingle,
+  deleteStorage
+} from '../../helper/localStorage'
 import ModalLink from '../../components/ModalLink/ModalLink'
 import SocialMediaIcon from '../../helper/SocialMediaIcon'
 import './Preview.css'
+import { set } from 'react-hook-form'
 
 const Preview = () => {
-  const { data, setData, newUser, setNewUser } = useContext(AppContext)
+  const { data, setData, newUser, setNewUser, counter, setCounter } = useContext(AppContext)
+  useEffect(() => {
+    const myData = fetchStorage('myData')
+    setData(myData)
+  }, [counter])
+  useEffect(() => {
+    
+    const myUser = fetchStorage('user')
+   if (myUser)
+    {setNewUser(myUser)}
+  },[counter])
   return (
     <div className='preview'>
       <div className='links'>

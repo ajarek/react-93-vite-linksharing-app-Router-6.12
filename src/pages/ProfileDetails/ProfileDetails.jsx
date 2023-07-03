@@ -16,14 +16,14 @@ import { date } from 'yup'
 
 const ProfileDetails = () => {
   
-  const [counter, setCounter] = useState(0)
+  
   const [preview, setPreview] = useState(null)
   
   const [first, setFirst] = useState('')
   const [last, setLast] = useState('')
   const [email, setEmail] = useState('')
   const navigate = useNavigate();
-  const { data, setData, newUser, setNewUser } = useContext(AppContext)
+  const { data, setData, newUser, setNewUser, counter, setCounter } = useContext(AppContext)
 
   useEffect(() => {
     const myData = fetchStorage('myData')

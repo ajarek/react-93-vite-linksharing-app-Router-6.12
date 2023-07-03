@@ -36,11 +36,11 @@ const router = createBrowserRouter([
 function App() {
   const [data, setData] = useState([])
   const [newUser, setNewUser] = useState(null)
-
+  const [counter, setCounter] = useState(0)
   return (
     <div className='App'>
       <AppContext.Provider
-        value={{data, setData, newUser, setNewUser}}
+        value={{data, setData, newUser, setNewUser, counter, setCounter}}
       >
         <RouterProvider router={router} />
       </AppContext.Provider>
