@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { BsLink, BsLink45Deg, BsPersonCircle } from 'react-icons/bs'
+import { BsLink, BsLink45Deg, BsPersonCircle,BsEyeFill } from 'react-icons/bs'
 
 import './Nav.css'
 import { React, useState, useContext } from 'react'
@@ -23,15 +23,16 @@ const Nav = () => {
 
         <ul className='wrapper'>
           <Link className='link' to={'/'}>
-         <BsLink45Deg/> Links
+         <BsLink45Deg/><span>Links</span>
           </Link>
           <Link className='link' to={'/profile-details'}>
-         <BsPersonCircle/> Profile Details
+         <BsPersonCircle/><span>Profile Details</span>
           </Link>
         </ul>
         <div className="preview">
         <Link className='link' to={'/preview'}>
-          Preview
+          <BsEyeFill/>
+           <span>Preview</span>
           </Link>
           </div>
       </nav>

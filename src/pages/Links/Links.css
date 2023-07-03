@@ -19,3 +19,14 @@
 .wrapper-link{
   padding:8px ;
 }
+@media (max-width:850px) {
+  .links .phone-wrapper{
+    display: none;
+  }
+  .links {
+    
+    padding: 80px 20px 20px 20px;
+   
+    grid-template-columns: 1fr ;
+  }
+}

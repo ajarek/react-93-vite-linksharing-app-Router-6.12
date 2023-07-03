@@ -1,12 +1,25 @@
-.preview{
+.preview-pages {
   height: 100vh;
   width: 100%;
-  
- 
-
 }
-.preview .links{
+
+.preview-pages .links {
+  padding: 80px 20px 20px 20px;
+  grid-template-columns: 1fr;
+}
+
+.preview-pages .phone-wrapper {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+}
+
+.preview-pages .customize-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.wrapper-link {
+  padding: 8px;
 }

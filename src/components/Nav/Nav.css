@@ -61,6 +61,15 @@ margin-right: 16px;
   color: var(--blueViolet);
   background-color: var(--lightBlueviolet);
 }
+@media (max-width:765px) {
+  .nav{
+    padding: 0 30px;
+  }
+  .logo h1,.wrapper span, .preview span {
+    display: none;
+  }
+  
+}
 
 
 

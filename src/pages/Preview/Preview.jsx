@@ -25,7 +25,7 @@ const Preview = () => {
     {setNewUser(myUser)}
   },[counter])
   return (
-    <div className='preview'>
+    <div className='preview-pages'>
       <div className='links'>
       <div className='phone-wrapper'>
         <Phone
